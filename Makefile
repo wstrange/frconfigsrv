@@ -3,7 +3,7 @@ appname := frconfigsrv
 
 sources := $(wildcard *.go)
 
-build = GOOS=$(1) GOARCH=$(2) CGO_ENABLED=0 go build -o $(appname)$(3)
+build = GOOS=$(1) GOARCH=$(2) CGO_ENABLED=0 go build -o build/$(appname)$(3)
 
 .PHONY: all linux clean
 
