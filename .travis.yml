@@ -1,0 +1,7 @@
+language: go
+
+go_import_path: forgerock.io/frconfigsrv
+
+install: make get-deps
+
+

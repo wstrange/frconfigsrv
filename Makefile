@@ -21,3 +21,8 @@ build/linux_amd64: $(sources)
 
 build/darwin_amd64: $(sources)
 	$(call build,darwin,amd64,-darwin)
+
+
+get-deps:
+	go get -u github.com/golang/dep/cmd/dep
+	dep ensure
