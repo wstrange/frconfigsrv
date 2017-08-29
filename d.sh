@@ -5,7 +5,11 @@
 #docker run -it --rm -v "$PWD":/go/src/forgerock.io/frconfig  -w /go/src/forgerock.io/frconfig -e GOOS=linux -e GOARCH=amd64 golang:alpine sh
 
 # Linux build for alpine base
-docker run --rm -v "$PWD":/go/src/forgerock.io/frconfigsrv -w /go/src/forgerock.io/frconfigsrv  -e GOOS=linux -e GOARCH=amd64 golang:alpine go build -v
+#docker run --rm -v "$PWD":/go/src/forgerock.io/frconfigsrv -w /go/src/forgerock.io/frconfigsrv  -e GOOS=linux -e GOARCH=amd64 golang:alpine go build -v
+
+# Linux build for ubuntu
+docker run --rm -v "$PWD":/go/src/forgerock.io/frconfigsrv -w /go/src/forgerock.io/frconfigsrv  -e GOOS=linux -e GOARCH=amd64 golang go build -v
+
 
 pod=`kubectl get pod -l component=amster -o jsonpath='{.items[*].metadata.name}'`
 

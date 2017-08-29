@@ -1,5 +1,5 @@
 
-appname := frconfig
+appname := frconfigsrv
 
 sources := $(wildcard *.go)
 
@@ -7,7 +7,7 @@ build = GOOS=$(1) GOARCH=$(2) CGO_ENABLED=0 go build -o build/$(appname)$(3)
 
 .PHONY: all darwin linux clean
 
-all: darwin linux
+all: linux
 
 clean:
 	rm -rf build/
